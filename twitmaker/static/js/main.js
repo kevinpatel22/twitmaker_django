@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let tweet = document.createElement('li');
       let timetag = document.createElement('time');
       timetag.innerText = time;
-      tweet.innerText = `${timetag}\n${msg}`;
+      tweet.innerText = `${timetag}${msg}`;
       tweets.appendChild(tweet)
     }).catch(function(error) {
       console.log(error);
