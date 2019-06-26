@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
       formData,
     ).then(function(response) {
       console.log(response);
+      const tweets = document.querySelector('.tweets');
+      let msg = response.data.message;
+      let time = new Date(response.date.created_at);
+      let tweet = document.createElement('li');
+      let timetag = document.createElement('time');
+      timetag.innerText = time;
+      tweet.innerText = `${timetag}\n${msg}`;
+      tweets.appendChild(tweet)
     }).catch(function(error) {
       console.log(error);
     });
